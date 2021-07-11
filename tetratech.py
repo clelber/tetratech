@@ -1,11 +1,7 @@
-#importação do chrome para controle do navegador
 from selenium.webdriver import Chrome
 import time as t
 import pandas as pd
 import matplotlib.pyplot as plt
-import requests
-import json
-
 
 navegador = Chrome("chromedriver")
 navegador.get("http://www.bibliotecavirtual.sp.gov.br/temas/sao-paulo/sao-paulo-populacao-do-estado.php")
@@ -53,30 +49,5 @@ for uf in ufs:
 
     plt.show()
 
-
-
-
-# s = requests.Session()
-# s.auth = ('imunizacao_public', 'qlto5t&7r_@+#Tlstigi')
-# response = s.post('https://imunizacao-es.saude.gov.br/_search?scroll=1m')
-# list_result = response.text.split(',')
-# _scroll_id = list_result[0].replace('{"_scroll_id":"', '').replace('"', '')
-
-# ufs = []
-# while True:
-#     s = requests.Session()
-#     s.auth = ('imunizacao_public', 'qlto5t&7r_@+#Tlstigi')
-#     s.params = _scroll_id
-#     response = s.post('https://imunizacao-es.saude.gov.br/_search?scroll=1m')
-#     list_result = response.text.split(',')
-#     _scroll_id = list_result[0].replace('{"_scroll_id":"', '').replace('"', '')
-#
-#     for index, li in enumerate(list_result):
-#         if 'estabelecimento_uf' in li:
-#             print(str(li)[33:35])
-#             ufs.append(str(li)[33:35])
-
-    # _scroll_id = list_result[0].replace('{"_scroll_id":"', '').replace('"', '')
-    # print(_scroll_id)
 
 
